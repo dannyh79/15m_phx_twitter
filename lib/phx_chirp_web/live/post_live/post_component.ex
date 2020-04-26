@@ -16,17 +16,17 @@ defmodule PhxChirpWeb.PostLive.PostComponent do
       </div>
 
       <div class="row">
-        <div class="column">
+        <div class="column text-center">
           <a href="#" phx-click="like" phx-target="<%= @myself %>">
             💟 <%= @post.likes_count %>
           </a>
         </div>
-        <div class="column">
+        <div class="column text-center">
           <a href="#" phx-click="repost" phx-target="<%= @myself %>">
             🔄 <%= @post.reposts_count %>
           </a>
         </div>
-        <div class="column">
+        <div class="column text-center">
           <%= live_patch to: Routes.post_index_path(@socket, :edit, @post.id) do %>
             ✏️
           <% end %>
