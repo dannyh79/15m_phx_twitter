@@ -17,7 +17,7 @@ defmodule PhxChirpWeb.Router do
   scope "/", PhxChirpWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", PostLive.Index, :index
 
     live "/posts", PostLive.Index, :index
     live "/posts/new", PostLive.Index, :new
