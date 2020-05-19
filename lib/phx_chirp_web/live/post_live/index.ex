@@ -39,7 +39,7 @@ defmodule PhxChirpWeb.PostLive.Index do
     post = Timeline.get_post!(id)
     {:ok, _} = Timeline.delete_post(post)
 
-    {:noreply, assign(socket, :posts, fetch_posts())}
+    {:noreply, socket}
   end
 
   @impl true
@@ -49,6 +49,10 @@ defmodule PhxChirpWeb.PostLive.Index do
 
   def handle_info({:post_updated, post}, socket) do
     {:noreply, update(socket, :posts, fn posts -> [post | posts] end)}
+  end
+
+  def handle_info({:post_deleted, _}, socket) do
+    {:noreply, assign(socket, :posts, fetch_posts())}
   end
 
   defp fetch_posts do
