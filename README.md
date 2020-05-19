@@ -16,8 +16,5 @@ This project uses PostgreSQL. To use it, you need to either
 - Have a user `postgres` with password `postgres`, or
 - Go to `config/dev.exs` and configure your database
 
-## Known Issues
-Live delete feature is yet to complete.
-
 ## License
 MIT
