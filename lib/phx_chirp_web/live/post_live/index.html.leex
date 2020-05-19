@@ -9,7 +9,7 @@
     return_to: Routes.post_index_path(@socket, :index) %>
 <% end %>
 
-<div id="posts" phx-update="prepend">
+<div id="posts" phx-update="replace">
   <%= for post <- @posts do %>
     <%= live_component @socket, PhxChirpWeb.PostLive.PostComponent, id: post.id, post: post %>
   <% end %>
